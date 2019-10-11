@@ -1,6 +1,8 @@
 package Hal
 
-import "math/rand"
+import (
+	"math/rand"
+)
 
 func generateRandomNumber(size int) []int {
 	rand_number := make([]int, size, size)
@@ -9,6 +11,56 @@ func generateRandomNumber(size int) []int {
 	}
 
 	return rand_number
+}
+
+// https://en.wikipedia.org/wiki/Merge_sort
+func TopDownMergeSort(a []int) []int {
+	n := len(a)
+	if n <= 1 {
+		return a
+	}
+
+	var left []int
+	var right []int
+
+	for i := 0; i < n; i ++ {
+		if i < n/2 {
+			left = append(left, a[i])
+		} else {
+			right = append(right, a[i])
+		}
+	}
+
+	left = TopDownMergeSort(left)
+	right = TopDownMergeSort(right)
+
+	return Merge(left, right)
+}
+
+func Merge(left, right []int) []int {
+	var res []int
+
+	for len(left) > 0 && len(right) > 0 {
+		if left[0] <= right[0] {
+			res = append(res, left[0])
+			left = left[1: len(left)]
+		} else {
+			res = append(res, right[0])
+			right = right[1: len(right)]
+		}
+	}
+
+	for len(left) > 0 {
+		res = append(res, left[0])
+		left = left[1: len(left)]
+	}
+
+	for len(right) > 0 {
+		res = append(res, right[0])
+		right = right[1: len(right)]
+	}
+
+	return res
 }
 
 // https://en.wikipedia.org/wiki/Gnome_sort
