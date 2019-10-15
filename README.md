@@ -21,10 +21,10 @@
 
 
 ### 1000 Random Numbers Sorting
-| Algorithm | Rounds | Running Time | Memory Allocation | Distinct Memory Allocations Occurrence | 
+| Algorithm | Rounds | Running Time | Memory Allocation | Distinct Memory Allocations | 
 | --------- | --------- | --------- | --------- | --------- | 
 TimSort |                         81814   |          43027 ns/ op |            8192 B/ op |          1 allocs/ op 
-T op |DownMergeSort |                10000   |        326965 ns/ op |          309977 B/ op |       7012 allocs/ op 
+TopDownMergeSort |                10000   |        326965 ns/ op |          309977 B/ op |       7012 allocs/ op 
 GnomeSort |                        5829   |       636441 ns/ op |            8192 B/ op |          1 allocs/ op 
 GnomeSort2 |                       9196   |         361781 ns/ op |            8192 B/ op |          1 allocs/ op 
 QuickSort |                       57187   |          60980 ns/ op |           16384 B/ op |          2 allocs/ op 
