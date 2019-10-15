@@ -12,12 +12,19 @@ import (
 >= 10000 ( - 100000000): quicksortmy2 consistently the best, quicksort google becomes the second
  */
 
-var arrN = 10000
+var arrN = 1000
+
+func BenchmarkTimSort(b *testing.B) {
+	for n := 0; n < b.N; n ++ {
+		A := generateRandomNumber(arrN)
+		A = TimSort(A)
+	}
+}
 
 func BenchmarkTopDownMergeSort(b *testing.B) {
 	for n := 0; n < b.N; n ++ {
 		A := generateRandomNumber(arrN)
-		A = TopDownMergeSort(A)
+		TopDownMergeSort(A)
 	}
 }
 
