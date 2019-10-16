@@ -6,6 +6,7 @@ import (
 
 var minRun = 32
 
+// https://www.codespeedy.com/timsort-algorithm-implementation-in-python/
 func TimSort(a []int) []int {
 	n := len(a)
 	for i := 0; i < n; i += minRun {

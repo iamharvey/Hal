@@ -14,53 +14,59 @@ import (
 
 var arrN = 1000
 
-func BenchmarkTimSort(b *testing.B) {
+//func BenchmarkOddEvenSort(b *testing.B) {
+//	for n := 0; n < b.N; n ++ {
+//		A := generateRandomNumber(arrN)
+//		A = OddEvenSort(A)
+//	}
+//}
+//
+//func BenchmarkBTreeSort(b *testing.B) {
+//	for n := 0; n < b.N; n ++ {
+//		A := generateRandomNumber(arrN)
+//		A = BTreeSort(A)
+//	}
+//}
+//
+//func BenchmarkRadixSort(b *testing.B) {
+//	for n := 0; n < b.N; n ++ {
+//		A := generateRandomNumber(arrN)
+//		A = RadixSort(A)
+//	}
+//}
+//
+//func BenchmarkHeapSort(b *testing.B) {
+//	for n := 0; n < b.N; n ++ {
+//		A := generateRandomNumber(arrN)
+//		A = HeapSort(A)
+//	}
+//}
+//
+//func BenchmarkTimSort(b *testing.B) {
+//	for n := 0; n < b.N; n ++ {
+//		A := generateRandomNumber(arrN)
+//		A = TimSort(A)
+//	}
+//}
+//
+//func BenchmarkGnomeSort2(b *testing.B) {
+//	for n := 0; n < b.N; n ++ {
+//		A := generateRandomNumber(arrN)
+//		GnomeSort2(A)
+//	}
+//}
+//
+func BenchmarkQuickSort_Hoare(b *testing.B) {
 	for n := 0; n < b.N; n ++ {
 		A := generateRandomNumber(arrN)
-		A = TimSort(A)
+		QuickSort(A, "hoare")
 	}
 }
 
-func BenchmarkTopDownMergeSort(b *testing.B) {
+func BenchmarkQuickSort_Lomuto(b *testing.B) {
 	for n := 0; n < b.N; n ++ {
 		A := generateRandomNumber(arrN)
-		TopDownMergeSort(A)
-	}
-}
-
-func BenchmarkGnomeSort(b *testing.B) {
-	for n := 0; n < b.N; n ++ {
-		A := generateRandomNumber(arrN)
-		GnomeSort(A)
-	}
-}
-
-func BenchmarkGnomeSort2(b *testing.B) {
-	for n := 0; n < b.N; n ++ {
-		A := generateRandomNumber(arrN)
-		GnomeSort2(A)
-	}
-}
-
-func BenchmarkQuickSort(b *testing.B) {
-	for n := 0; n < b.N; n ++ {
-		A := generateRandomNumber(arrN)
-		QuickSort(A)
-	}
-}
-
-func BenchmarkQuickSortMy(b *testing.B) {
-	for n := 0; n < b.N; n ++ {
-		A := generateRandomNumber(arrN)
-		QuickSortMy(A, 0, len(A) - 1)
-	}
-}
-
-func BenchmarkQuickSortMy2(b *testing.B) {
-	for n := 0; n < b.N; n ++ {
-		A := generateRandomNumber(arrN)
-		QuickSortMy2(A, 0, len(A) - 1)
-		// fmt.Println(A)
+		QuickSort(A, "lomuto")
 	}
 }
 
@@ -71,23 +77,16 @@ func BenchmarkQuickSortGolang(b *testing.B) {
 	}
 }
 
-func BenchmarkBubbleSort(b *testing.B) {
-	for n := 0; n < b.N; n ++ {
-		A := generateRandomNumber(arrN)
-		BubbleSort(A)
-	}
-}
-
-func BenchmarkBubbleSort2(b *testing.B) {
-	for n := 0; n < b.N; n ++ {
-		A := generateRandomNumber(arrN)
-		BubbleSort2(A)
-	}
-}
-
-func BenchmarkCocktailShakerSort(b *testing.B) {
-	for n := 0; n < b.N; n ++ {
-		A := generateRandomNumber(arrN)
-		CocktailShakerSort(A)
-	}
-}
+//func BenchmarkBubbleSort(b *testing.B) {
+//	for n := 0; n < b.N; n ++ {
+//		A := generateRandomNumber(arrN)
+//		BubbleSort(A)
+//	}
+//}
+//
+//func BenchmarkCocktailShakerSort(b *testing.B) {
+//	for n := 0; n < b.N; n ++ {
+//		A := generateRandomNumber(arrN)
+//		CocktailShakerSort(A)
+//	}
+//}
