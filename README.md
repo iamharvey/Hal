@@ -6,10 +6,6 @@
 - Heap Sort
 - B-Tree Sort
 - Radix Sort
-- Gnome Sort
-- Cocktail Shaker Sort
-- Odd–even Sort / Brick Sort
-- Bubble Sort
 - Insert Sort
 
 ## TO-DO
