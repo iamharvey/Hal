@@ -12,7 +12,7 @@ import (
 >= 10000 ( - 100000000): quicksortmy2 consistently the best, quicksort google becomes the second
  */
 
-var arrN = 1000
+var arrN = 100
 
 //func BenchmarkOddEvenSort(b *testing.B) {
 //	for n := 0; n < b.N; n ++ {
@@ -42,12 +42,7 @@ var arrN = 1000
 //	}
 //}
 //
-//func BenchmarkTimSort(b *testing.B) {
-//	for n := 0; n < b.N; n ++ {
-//		A := generateRandomNumber(arrN)
-//		A = TimSort(A)
-//	}
-//}
+
 //
 //func BenchmarkGnomeSort2(b *testing.B) {
 //	for n := 0; n < b.N; n ++ {
@@ -56,24 +51,54 @@ var arrN = 1000
 //	}
 //}
 //
+
+func BenchmarkTimSort32(b *testing.B) {
+	for n := 0; n < b.N; n ++ {
+		A := RandInt(arrN)
+		TimSort(A, 32)
+	}
+}
+
+func BenchmarkTimSort64(b *testing.B) {
+	for n := 0; n < b.N; n ++ {
+		A := RandInt(arrN)
+		TimSort(A, 64)
+	}
+}
+
+func BenchmarkTimSort128(b *testing.B) {
+	for n := 0; n < b.N; n ++ {
+		A := RandInt(arrN)
+		TimSort(A, 128)
+	}
+}
+
+
 func BenchmarkQuickSort_Hoare(b *testing.B) {
 	for n := 0; n < b.N; n ++ {
-		A := generateRandomNumber(arrN)
+		A := RandInt(arrN)
 		QuickSort(A, "hoare")
 	}
 }
 
 func BenchmarkQuickSort_Lomuto(b *testing.B) {
 	for n := 0; n < b.N; n ++ {
-		A := generateRandomNumber(arrN)
+		A := RandInt(arrN)
 		QuickSort(A, "lomuto")
 	}
 }
 
 func BenchmarkQuickSortGolang(b *testing.B) {
 	for n := 0; n < b.N; n ++ {
-		A := generateRandomNumber(arrN)
+		A := RandInt(arrN)
 		sort.Ints(A)
+	}
+}
+
+func BenchmarkInsertSort(b *testing.B) {
+	for n := 0; n < b.N; n ++ {
+		A := RandInt(arrN)
+		InsertSort(A)
 	}
 }
 

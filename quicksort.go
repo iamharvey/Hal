@@ -1,7 +1,8 @@
 package Hal
 
 /*
-QuickSort sorts an array using iterative quick sort algorithm.
+QuickSort sorts an array using Iterative Quick Sort algorithm.
+Quick Sort works pretty well on large slice
  */
 func QuickSort(a []int, scheme string) {
 
@@ -12,7 +13,7 @@ func QuickSort(a []int, scheme string) {
 	return
 }
 
-// sort sorts the array iteratively
+// quickSortRecur sorts the array iteratively
 func quickSortRecur(a []int, lo, hi int, scheme string) {
 	if lo < hi {
 		var pos int

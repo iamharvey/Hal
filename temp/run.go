@@ -1,18 +1,6 @@
-package Hal
-
-import (
-	"math/rand"
-)
+package temp
 
 
-func generateRandomNumber(size int) []int {
-	rand_number := make([]int, size, size)
-	for i := 0; i < size; i++ {
-		rand_number[i] = rand.Intn(size^2)
-	}
-
-	return rand_number
-}
 
 // https://en.wikipedia.org/wiki/Odd%E2%80%93even_sort
 func OddEvenSort(a []int) []int {

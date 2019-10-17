@@ -1,4 +1,4 @@
-package Hal
+package temp
 
 // https://www.programiz.com/dsa/heap-sort
 func HeapSort(a []int) []int {
