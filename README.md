@@ -29,6 +29,8 @@
 Sorting N Random Numbers, range from 1 to 2N. In my benchmark experiment, N is set to 100, 1000, 10000, 100000.
 
 ### Results - 100 Random Numbers
+| Algorithm | Rounds | Running Time | Memory Allocation | Distinct Memory Allocations | 
+| --------- | --------- | --------- | --------- | --------- | 
 Tim Sort(run size=32) |             553020   |          5897 ns/op |            896 B/op |          1 allocs/op
 Tim Sort(run size=64) |             591276   |          5604 ns/op |            896 B/op |          1 allocs/op
 Tim Sort(run size=128) |            611834   |          5964 ns/op |           2496 B/op |          7 allocs/op
