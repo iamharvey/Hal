@@ -12,7 +12,7 @@ import (
 >= 10000 ( - 100000000): quicksortmy2 consistently the best, quicksort google becomes the second
  */
 
-var arrN = 100
+var arrN = 100000
 
 //func BenchmarkOddEvenSort(b *testing.B) {
 //	for n := 0; n < b.N; n ++ {

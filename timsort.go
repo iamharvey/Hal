@@ -21,21 +21,16 @@ func TimSort(a []int, runs int) {
 		if n <= 150 {
 			runs = n
 		} else {
-			if runs < 32 || runs > 64 {
-				// the number of runs should range from 32 to 64, set to default value (32)"
+			if (runs & (runs - 1)) != 0 {
+				// the number of runs should be the power of 2, set to default value (32)"
 				runs = 32
-			} else {
-				if (runs & (runs - 1)) == 0 {
-					// the number of runs should be the power of 2, set to default value (32)"
-					runs = 32
-				}
 			}
 		}
 	}
 
 	// sort each subsequences using Insert Sort
 	for start := 0; start < n; start += runs {
-		insertSort(a, start, min(start + runs - 1, n - 1))
+		insertSort(a, start, min(start + 32 - 1, n - 1))
 	}
 
 	// merge runs from the size of n, then 2n, 4n ...
@@ -69,6 +64,9 @@ func insertSort(a []int, start, end int) {
 
 // merge merges sorted runs
 func merge(a []int, start, mid, end int) {
+	if mid >= end {
+		return
+	}
 
 	n1 := mid - start + 1
 	n2 := end - mid
