@@ -1,5 +1,4 @@
 package Hal
-
 /*
 Sort is a simple wrap-up over fast sorting algorithms.
 If the slice size is leq 100, Insert Sort is used;
@@ -13,3 +12,5 @@ func Sort(a []int) {
 		QuickSort(a, "lomuto")
 	}
 }
+
+
