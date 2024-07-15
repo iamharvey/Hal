@@ -81,7 +81,7 @@ Tim Sort(run size=64) |              5282   |         707896 ns/op |         695
 Quick Sort(Hoare) |                  3795    |        974970 ns/op |          81920 B/op  |        1 allocs/op 
 Quick Sort(Lomuto) |                 4334     |       872705 ns/op |          81920 B/op |         1 allocs/op 
 Quick Sort(Golang Built-in) |        2158     |      1629768 ns/op |          81952 B/op  |        2 allocs/op
-Heap Sort |                          2289     |      1504067 ns/op           81920 B/op   |       1 allocs/op
+Heap Sort |                          2289     |      1504067 ns/op  |         81920 B/op   |       1 allocs/op
 Insert Sort |                         235     |     14666689 ns/op   |        81920 B/op     |     1 allocs/op
 
 ### Results - 100K Random Numbers 
